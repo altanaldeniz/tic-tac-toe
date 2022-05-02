@@ -8,6 +8,12 @@ function App() {
         <hr className=" min-w-max" />
       </div>
       <Board />
+      <footer className="border-4 p-3 m-5">
+        <span>
+          View the source code on{" "}
+          <a href="https://github.com/altanaldeniz">GitHub</a>
+        </span>
+      </footer>
     </div>
   );
 }
