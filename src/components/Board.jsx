@@ -77,8 +77,8 @@ const Board = () => {
           : gameOver
           ? "Draw!"
           : turn
-          ? "X's turn"
-          : "O's turn"}
+          ? "X's turn."
+          : "O's turn."}
       </h1>
       <SquareContext.Provider
         value={{
