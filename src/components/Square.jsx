@@ -12,14 +12,17 @@ const Square = ({ label }) => {
     newGrid[label] = turn ? "X" : "O";
     setGrid(newGrid);
     setTurn(!turn);
-    if (grid.includes("")) return;
-    else setGameOver(true);
+    if (!grid.includes("")) setGameOver(true);
   };
+
+  const usedSquare = grid[label] !== "" ? true : false;
 
   return (
     <div
       onClick={handleClick}
-      className="h-[100px] w-[100px] flex justify-center items-center bg-gray-200 hover:bg-gray-300 cursor-pointer"
+      className={`h-[100px] w-[100px] flex justify-center items-center bg-gray-200 hover:bg-gray-300 ${
+        usedSquare ? "cursor-default" : "cursor-pointer"
+      }`}
     >
       <span className="text-4xl">{grid[label] ? grid[label] : ""}</span>
     </div>
