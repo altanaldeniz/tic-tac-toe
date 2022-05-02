@@ -11,7 +11,7 @@ function App() {
       <footer className="p-3 m-5">
         <span>
           View the source code on{" "}
-          <a href="https://github.com/altanaldeniz">GitHub</a>
+          <a href="https://github.com/altanaldeniz/tic-tac-toe">GitHub</a>
         </span>
       </footer>
     </div>
