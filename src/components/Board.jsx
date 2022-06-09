@@ -1,7 +1,7 @@
-import { createContext, useState } from "react";
-import Square from "./Square";
+import { createContext, useState } from 'react';
+import Square from './Square';
 
-const GRID = ["", "", "", "", "", "", "", "", ""];
+const GRID = ['', '', '', '', '', '', '', '', ''];
 
 export const SquareContext = createContext();
 
@@ -9,14 +9,14 @@ const Board = () => {
   const [grid, setGrid] = useState([...GRID]);
   const [turn, setTurn] = useState(true);
   const [gameOver, setGameOver] = useState(false);
-  const [gameWinner, setGameWinner] = useState("");
+  const [gameWinner, setGameWinner] = useState('');
   const [winCount_X, setWinCount_X] = useState(0);
   const [winCount_O, setWinCount_O] = useState(0);
 
   const restart = () => {
     setGrid([...GRID]);
     setTurn(true);
-    setGameWinner("");
+    setGameWinner('');
     setGameOver(false);
   };
 
@@ -45,23 +45,20 @@ const Board = () => {
       if (x === 3 || o === 3) return;
       el.forEach((el) => {
         if (x === 3 || o === 3) return;
-        console.log(el);
         x = 0;
         o = 0;
         el.forEach((el) => {
-          if (grid[el] === "X") x++;
-          if (grid[el] === "O") o++;
+          if (grid[el] === 'X') x++;
+          if (grid[el] === 'O') o++;
         });
-        console.log(`count of x: ${x}`);
-        console.log(`count of o: ${o}`);
       });
     });
     if (x === 3) {
-      setGameWinner("X");
+      setGameWinner('X');
       setGameOver(true);
       setWinCount_X(winCount_X + 1);
     } else if (o === 3) {
-      setGameWinner("O");
+      setGameWinner('O');
       setGameOver(true);
       setWinCount_O(winCount_O + 1);
     }
@@ -70,12 +67,12 @@ const Board = () => {
   return (
     <div className=" border-4 flex flex-col justify-center items-center p-5 my-4">
       <h1>
-        {gameWinner === "X"
-          ? "X won!"
-          : gameWinner === "O"
-          ? "O won!"
+        {gameWinner === 'X'
+          ? 'X won!'
+          : gameWinner === 'O'
+          ? 'O won!'
           : gameOver
-          ? "Draw!"
+          ? 'Draw!'
           : turn
           ? "X's turn."
           : "O's turn."}
@@ -117,7 +114,7 @@ const Board = () => {
         onClick={restart}
         className="my-2 p-4 bg-gray-200 hover:bg-gray-300"
       >
-        {gameOver ? "Play again?" : "Restart"}
+        {gameOver ? 'Play again?' : 'Restart'}
       </button>
     </div>
   );
